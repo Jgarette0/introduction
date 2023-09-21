@@ -1,3 +1,5 @@
+
+
 const checkbox = document.querySelector('input[type="checkbox"]');
 const facebookIcon = document.querySelector('.icon1');
 const instagramIcon = document.querySelector('.icon2');
@@ -33,17 +35,34 @@ checkbox.addEventListener('change', () => {
     githubIcon.src = 'image/github1.svg';
   }
 });
+function handleWheelEvent(event) {
+  if (event.deltaY !== 0) {
+    event.stopPropagation();
+  }
+
+  if (event.deltaY > 0) {
+    scroll(-1); // Scroll left
+  } else {
+    scroll(1); // Scroll right
+  }
+}
+
+const articleElementA = document.getElementById('myArticle-a');
+const articleElementB = document.getElementById('myArticle-b');
+
+articleElementA.addEventListener('wheel', handleWheelEvent);
+articleElementB.addEventListener('wheel', handleWheelEvent);
 
 let scrollX = 0;
 
 function scrollLeft() {
-  scrollX -= window.innerWidth * 0.3;
+  scrollX -= window.innerWidth * 0.05;
   scrollX = Math.max(scrollX, 0);
   updateScrollPosition();
 }
 
 function scrollRight() {
-  scrollX += window.innerWidth * 0.3;
+  scrollX += window.innerWidth * 0.05;
   const containerWidth = document.querySelector('.container').scrollWidth - window.innerWidth;
   scrollX = Math.min(scrollX, containerWidth);
   updateScrollPosition();

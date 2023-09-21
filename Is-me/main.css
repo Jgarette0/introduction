@@ -59,14 +59,14 @@ p {
 
 }
 
-h2 {
+.section3 h2 {
   width: 900px;
   font-size: 90px;
   font-family: Helvetica;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--night-text-color);
-  cursor: url('image/cc1.svg'),auto;
+  cursor: url('image/circle-filled2.svg'),auto;
 }
 
 .mask {
@@ -116,6 +116,20 @@ h2 {
   background-image: linear-gradient(45deg, #fa7671 50%, #f45f7f);
 }
 
+.interest{
+  opacity:0;
+  transition: ease .5s;
+  color:linear-gradient(45deg, #237923 50%, #3bafb5)
+}
+.section3:hover{
+  .interest{
+ 
+  transition-delay: 8s;
+  opacity: 1;
+}
+
+}
+
 .section1{
   height: 100%;
   width: 100%;
@@ -158,10 +172,9 @@ h2 {
 .myname .letter:hover {
   color: royalblue;
   transition: color 0.2s ease;
+  
 }
-.myname .letter:not(:hover){
- transition-delay:.7s;
-}
+
 .section1-2{
   display: flex;
   flex-direction: column;
@@ -187,6 +200,7 @@ h2 {
     padding-bottom: 500px;
     z-index: 5;
     padding-left: 100px;
+    opacity: 0;
     
 }
 
@@ -198,6 +212,7 @@ h2 {
     overflow: hidden;
     font-weight: 900;
     margin-top: -235px;
+    opacity: 1;
 
 }
 .age:not(:hover){
@@ -205,16 +220,189 @@ h2 {
  }
 /*section2 beaches*/
 .section2{
-  color: var(--night-text-color)
+  display: grid;
+  grid-template-columns:1fr 1fr ;
+}
+.section2-a{
+  margin: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 800px;
+  z-index: 500;
+  margin-left: -200px;
+  align-self: center;
+  height: 400px;
+  width: 600px;
+  border-radius: 5px;
+  transition: height 5s, width 5s;
+
+  
+}
+#myArticle-a{
+  align-self: center;
+  width: 600px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+.section2-a:hover{
+  transition: ease 1s;
+  height: 600px;
+  width: 600px;
+  border-radius: 15px;
+  
+}
+
+.article-a {
+  
+  border-radius: 10px;
+  height: 500px;
+  text-align: left;
+  height: 90%;
+  background: var(--day-background-color);
+  overflow: scroll;
+  width: 90%;
+  padding: 10% 5%;
+  font: 50%/1.4 serif;
+  border:none;
+  color: var(--day-text-color);
+  overflow-x: hidden;
+  cursor: url('image/circle1.svg'),auto;
+  display: flex;
+  flex-direction: column;
+  opacity: .4;
+  
+}
+.article-a:hover{
+  opacity: 1;
+  transition: ease-out .2s;
+}
+
+.article-a p{
+  margin-top:-10px;
+  padding: none;
+}
+.article-a div{
+  font-weight: bold;
+}
+.article-a h1{
+  font-weight: bolder;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.article-a::-webkit-scrollbar {
+    width: 8px;
+  
+   
+}
+ 
+.article-a::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0px 0 15px var(--night-background-color);
+    border-radius: 10px;
+    
+}
+ 
+.article-a::-webkit-scrollbar-thumb {
+  background-color: var(--night-background-color);
+   border-radius: 60px;
+ 
+}
+
+ 
+.section2-b{
+  margin: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 800px;
+  z-index: 500;
+  margin-left: -50px;
+  align-self: center;
+  height: 400px;
+  width: 600px;
+  border-radius: 5px;
+  transition: height 5s, width 5s;
+  
+}
+.section2-b:hover{
+  transition: ease 1s;
+  height: 600px;
+  width: 600px;
+  border-radius: 15px;
+  
+}
+#myArticle-b{
+  align-self: center;
+  width: 600px;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+.article-b {
+  
+  border-radius: 10px;
+  height: 500px;
+  text-align: left;
+  height: 90%;
+  background: var(--day-background-color);
+  overflow: scroll;
+  width: 90%;
+  padding: 10% 5%;
+  font: 50%/1.4 serif;
+  border:none;
+  color: var(--day-text-color);
+  overflow-x: hidden;
+  cursor: url('image/circle1.svg'),auto;
+  display: flex;
+  flex-direction: column;
+  opacity: .4;
+ 
+}
+.article-b:hover{
+  opacity: 1;
+}
+
+.article-b p{
+  margin-top:-10px;
+  padding: none;
+}
+.article-b div{
+  font-weight: bold;
+}
+.article-b h1{
+  font-weight: bolder;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.article-b::-webkit-scrollbar {
+    width: 8px;
+  
+   
+}
+ 
+.article-b::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0px 0 15px var(--night-background-color);
+    border-radius: 10px;
+    
+}
+ 
+.article-b::-webkit-scrollbar-thumb {
+  background-color: var(--night-background-color);
+   border-radius: 60px;
+ 
 }
 
 
 
 
-
-
-
-
+/*
 
 
 section{
