@@ -1,3 +1,4 @@
+
 root {
   --offset: 6px;
 }
@@ -9,13 +10,13 @@ html, body {
 
 .container {
   display: flex; /* Display sections in a row */
-  width: 600%; /* 100% for each section (3 sections total) */
+  width: 800%; /* 100% for each section (3 sections total) */
   height: 100vh; /* Full viewport height for each section */
   transition: transform 0.8s ease; /* Smooth transition for scrolling */
   transform: translateX(0); /* Start with the first section */
   margin-left: 82px;
-  border: 2px solid blue;
 }
+
 
 .section1,.section2,.section3,.section4,.section5 {
   flex: 1; /* Equal width for each section */
@@ -41,9 +42,7 @@ p {
   background-color: var(--night-background-color);
 }
 
-.section4 {
-  background-color: var(--night-background-color);
-}
+
 
 .section5 {
   background-color: var(--night-background-color);
@@ -230,14 +229,13 @@ p {
   align-self: center;
   box-sizing: border-box;
   overflow: hidden;
-  width: 800px;
   z-index: 500;
   margin-left: -200px;
   align-self: center;
-  height: 400px;
+  height: 500px;
   width: 600px;
   border-radius: 5px;
-  transition: height 5s, width 5s;
+  transition: height .5s, width .5s;
 
   
 }
@@ -320,15 +318,13 @@ p {
   align-self: center;
   box-sizing: border-box;
   overflow: hidden;
-  width: 800px;
   z-index: 500;
   margin-left: -50px;
   align-self: center;
-  height: 400px;
+  height: 500px;
   width: 600px;
   border-radius: 5px;
-  transition: height 5s, width 5s;
-  
+  transition: height .5s, width .5s;
 }
 .section2-b:hover{
   transition: ease 1s;
@@ -398,7 +394,9 @@ p {
    border-radius: 60px;
  
 }
-
+.section3{
+  width: 1000px;
+}
 
 
 

@@ -32,7 +32,6 @@ body {
   z-index: 100;
   left: 0;
   background-color: var(--day-background-color);
-  border-right: 2px solid var(--night-background-color);
   cursor: url('image/circle-filled3.svg'), auto;
   display: flex;
   flex-direction: column;
