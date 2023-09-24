@@ -1,0 +1,234 @@
+
+html,body{
+margin: 0;
+padding: 0;
+}
+:root {
+  --day-background-color: #f9fbed; /* Light mode background color */
+  --day-text-color: #000000; /* Light mode text color */
+  --night-background-color: #000000; /* Night mode background color */
+  --night-text-color: #f9fbed; /* Night mode text color */
+
+}
+
+::-webkit-scrollbar{
+  color: transparent;
+  height: 2px;
+
+}
+::-webkit-scrollbar-thumb{
+  background-color: var( --day-background-color);
+
+ 
+}
+body {
+  background-color: var( --night-background-color);
+  color: var(--night-text-color);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: url(image/c2.svg),auto;
+  overflow-y: hidden;
+
+}
+
+.sidebar{
+  position: fixed;
+  height: 100vh;
+  width: 80px;
+  top: 0;
+  z-index: 100;
+  left: 0;
+  background-color: var(--day-background-color);
+  cursor: url('image/circle-filled3.svg'), auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.switch {
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  width: 2.9em;
+  height: 1.8em;
+  margin:20px 16px;
+  cursor: url('image/circle2.svg'), auto;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  cursor: url('image/circle1.svg'), auto;
+}
+
+.slider {
+  --background: #2a2929;
+  position: absolute;
+  cursor: url('image/circle3.svg'), pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--night-background-color);
+  transition: .5s;
+  border-radius: 30px;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.1em;
+  width: 1.1em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #7f7f7f;
+  background: var(--night-background-color);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #494949;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px var(--day-text-color);
+}
+
+
+.switch, .sidebar-icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  cursor: url('image/circle2.svg'), pointer;
+ 
+}
+
+.sidebar-icons{
+  font-size: 10px;
+  height: 70px;
+  .text{
+    opacity: 0;
+    color: var( --day-text-color);
+    cursor: url('image/circle1.svg'), pointer;
+  }
+}
+.sidebar-icons:hover{
+  transition: ease .2s;
+  border-bottom:10px solid var(--night-background-color);
+  border-top:.5px solid var(--night-background-color);
+  border-radius: 20px;
+  opacity: 1;
+  .text{
+    opacity: 1;
+    margin-top: 5px;
+    cursor: url('image/circle3.svg'), pointer;
+   
+  }
+}
+.sidebar-icons:active{
+  transition: ease .2s;
+  border-bottom:1px solid var(--night-background-color);
+  border-top:1px solid var(--night-background-color);
+  border-radius: 20px;
+  opacity: 1;
+}
+.icon1,.icon2,.icon3{
+  width: 27px;
+  
+}
+
+.icon4,.icon5{
+  width: 22px;
+}
+.icon1{cursor: url('image/circle1.svg'), pointer;}
+.icon2{cursor: url('image/circle2.svg'), pointer;}
+.icon3{cursor: url('image/circle3.svg'), pointer;}
+.icon4{cursor: url('image/circle2.svg'), pointer;}
+.icon5{cursor: url('image/circle3.svg'), pointer;}
+
+
+
+
+.sidebar-icon{
+  transition: ease .2s;
+  border-bottom:.5px solid var(--night-background-color);
+  border-top:.5px solid var(--night-background-color);
+  border-radius: 50px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#spin-button{
+  background-color: transparent;
+  border: none;
+}
+#music-player {
+  display: none;
+}
+.spinning {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+.gif{
+  text-align:center;
+  margin-top: 10px;
+}
+.gif img{
+
+  width: 70px;
+  border-radius: 10px;
+}
+.spin-button{
+  border:none;
+}
+.rotate-icon {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.rotate-icon i {
+  font-size: 48px;
+}
+
+/* Define a media query to show the icon below 600px screen width */
+@media (max-width: 600px) {
+  .rotate-icon {
+      display: flex;
+  }
+  .content {
+      display: none; /* Hide your main content when the icon is displayed */
+  }
+}
+.sidebar a{
+  text-decoration: none;
+}
