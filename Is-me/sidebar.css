@@ -221,7 +221,7 @@ input:checked + .slider:before {
 }
 
 /* Define a media query to show the icon below 600px screen width */
-@media (max-width: 600px) {
+@media (max-width: 950px) {
   .rotate-icon {
       display: flex;
   }
