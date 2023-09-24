@@ -123,3 +123,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+function navigateToCrud() {
+  // Specify the relative path to the "crud" folder and "index.html" file
+  window.location.href = "/crud/index.html";
+}
+const button = document.getElementById('spin-button');
+const musicPlayer = document.getElementById('music-player');
+let isPlaying = false;
+let isSpinning = false;
+
+
+button.addEventListener('click', () => {
+    if (!isPlaying && !isSpinning) {
+        // Start playing music and spinning
+        musicPlayer.play();
+        button.classList.add('spinning');
+        isPlaying = true;
+        isSpinning = true;
+    } else {
+        // Pause both spinning and music
+        musicPlayer.pause();
+        button.classList.remove('spinning');
+        isPlaying = false;
+        isSpinning = false;
+    }
+});
+
+button.addEventListener('dblclick', () => {
+    // Stop the music when double-clicked
+    musicPlayer.pause();
+    musicPlayer.currentTime = 0;
+    button.classList.remove('spinning');
+    isPlaying = false;
+    isSpinning = false;
+});
+const sButton = document.getElementById("spin-button");
+        const gifDiv = document.querySelector(".gif");
+        let gifAdded = false; // Flag to track if GIF is added
+
+        // Function to add or remove a GIF from the div with a delay
+        function toggleGifWithDelay() {
+            if (gifAdded) {
+                // If GIF is added, remove it immediately
+                gifDiv.innerHTML = "";
+                gifAdded = false;
+            } else {
+                // If GIF is not added, add it with a delay
+                setTimeout(() => {
+                    const gifImage = document.createElement("img");
+                    gifImage.src = "image/neverGonnaGiveYouUp.gif"; // Replace with your GIF URL
+                    gifImage.alt = "GIF";
+                    gifDiv.appendChild(gifImage);
+                    gifAdded = true;
+                }, 1000); // 1000 milliseconds = 1 second delay
+            }
+        }
+
+        // Attach the click event listener to the button
+        sButton.addEventListener("click", toggleGifWithDelay);
+
+        window.addEventListener("orientationchange", function () {
+          var icon = document.getElementById("rotateIcon");
+          if (window.orientation === 0 || window.orientation === 180) {
+              icon.style.display = "flex"; // Portrait orientation
+          } else {
+              icon.style.display = "none"; // Landscape orientation
+          }
+      });
+      
+      // Check orientation on page load
+      window.addEventListener("load", function () {
+          var icon = document.getElementById("rotateIcon");
+          if (window.innerWidth < 600 && (window.orientation === 90 || window.orientation === -90)) {
+              icon.style.display = "flex"; // Show the icon on smaller screens in landscape mode
+          }
+      });

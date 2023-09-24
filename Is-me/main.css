@@ -152,14 +152,14 @@ p {
   
 }
 .hey{
-  font-family: 'Leckerli one', cursive;
+  font-family: 'Leckerli one';
   font-size: 100px;
   margin-bottom: -80px;
   cursor: url('image/cc2.svg'), auto;
 }
 .myname{
   padding: none;
-  font-family: 'Tilt Warp',cursive;
+  font-family: 'Tilt Warp';
   font-size: 251px;
   padding-left: 18px;
   cursor: url('image/cc2.svg'), auto;

@@ -11,8 +11,16 @@ padding: 0;
 
 }
 
+::-webkit-scrollbar{
+  color: transparent;
+  height: 2px;
 
+}
+::-webkit-scrollbar-thumb{
+  background-color: var( --day-background-color);
 
+ 
+}
 body {
   background-color: var( --night-background-color);
   color: var(--night-text-color);
@@ -20,7 +28,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   cursor: url(image/c2.svg),auto;
-  overflow: hidden;
+  overflow-y: hidden;
 
 }
 
@@ -148,3 +156,79 @@ input:checked + .slider:before {
 .icon5{cursor: url('image/circle3.svg'), pointer;}
 
 
+
+
+.sidebar-icon{
+  transition: ease .2s;
+  border-bottom:.5px solid var(--night-background-color);
+  border-top:.5px solid var(--night-background-color);
+  border-radius: 50px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#spin-button{
+  background-color: transparent;
+  border: none;
+}
+#music-player {
+  display: none;
+}
+.spinning {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+.gif{
+  text-align:center;
+  margin-top: 10px;
+}
+.gif img{
+
+  width: 70px;
+  border-radius: 10px;
+}
+.spin-button{
+  border:none;
+}
+.rotate-icon {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.rotate-icon i {
+  font-size: 48px;
+}
+
+/* Define a media query to show the icon below 600px screen width */
+@media (max-width: 600px) {
+  .rotate-icon {
+      display: flex;
+  }
+  .content {
+      display: none; /* Hide your main content when the icon is displayed */
+  }
+}
+.sidebar a{
+  text-decoration: none;
+}
