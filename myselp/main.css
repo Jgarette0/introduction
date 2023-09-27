@@ -222,6 +222,7 @@ p {
 .section2{
   display: grid;
   grid-template-columns:1fr 1fr ;
+  column-gap: 80px;
 }
 .section2-a{
   margin: 3% 0;
@@ -236,15 +237,14 @@ p {
   width: 600px;
   border-radius: 5px;
   transition: height .5s, width .5s;
+  
 
   
 }
 #myArticle-a{
   align-self: center;
   width: 600px;
-  box-sizing: border-box;
-  overflow: hidden;
-  margin-right: 80px;
+  height: 70%;
 
 }
 .section2-a:hover{
@@ -337,9 +337,7 @@ p {
 #myArticle-b{
   align-self: center;
   width: 600px;
-  box-sizing: border-box;
-  overflow: hidden;
-  
+  height: 70%;
 }
 .article-b {
   
